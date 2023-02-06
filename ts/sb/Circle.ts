@@ -1,22 +1,38 @@
+namespace Sb {
+    export class Circle extends Sb.Shape {
+        private _radius: number = 0;
+    
+        constructor(style?: Object) {
+            super(style);
+            if (style) this.Style = style;
+            
+        }
 
-class Circle extends Shape {
-    // canvas;
-    // ctx;
+        public get Radius(): number { return this._radius; }
+        public set Radius(value: number) { this._radius = value; }
 
-    constructor(style: any) {
-        super(style);
-    }
-    // constructor(canvas) {
-    //     this.canvas = canvas;
-    //     this.ctx = canvas.getContext("2d");
+        protected set Style(style: Object) {
+            super.Style = style;
 
-        
-    //     this.ctx.roundRect(100, 10, 50, 70, 5);
-    //     this.ctx.fill()
-        
-    // }
-    public Render(ctx: any): void {
-        
+            if (style["radius"]) this.Radius = style["radius"];
+            if (style["fill"]) this.Fill = style["fill"];
+
+        }
+
+        public Render(ctx: any) : void {
+            const pos = this.GetPosition();
+
+            ctx.beginPath();
+            ctx.fillStyle = this.Fill;
+
+            ctx.roundRect(pos.left, pos.top, this.Radius, this.Radius, this.Radius);
+            
+            ctx.closePath();
+            ctx.fill()
+
+            super.Render(ctx);
+        }
     }
 }
+
     
