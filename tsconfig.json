@@ -1,0 +1,25 @@
+{
+    "compileOnSave": true,
+    "compilerOptions": {
+        "target": "es6",
+        "removeComments": true,
+        "noEmitOnError": true,
+        "outFile": "js/lib/Sb.js",
+        // "outDir": "js/lib"
+
+        // "outDir": "/js/lib",
+        // "sourceMap": true,
+    },
+    "files": [
+        // "ts/sb/Styles/SbStyles.ts",
+        // "ts/sb/SbCanvas.ts",
+        "ts/sb/Shape.ts",
+        // "ts/sb/SbRect.ts",
+        // "ts/sb/SbCircle.ts",
+        "ts/sb/Text.ts",
+        // "ts/sb/SbFps.ts",
+    ]
+    // "include": [
+    //     "ts/sb/*"
+    // ]
+}

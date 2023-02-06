@@ -1,0 +1,8 @@
+D:\Front-end\Canvas__\TS_test1\js>tsc main.ts
+
+D:
+cd \Front-end\Canvas__\TS_test1
+tsc 
+
+
+---------------------------------

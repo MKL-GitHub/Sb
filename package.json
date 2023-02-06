@@ -1,0 +1,10 @@
+{
+    "name": "sb",
+    "version": "1.0.0",
+    "description": "Library to create shapes on canvas.",
+    "main": "js/lib/Sb.js",
+    "types": "js/lib/Sb.d.ts",
+    "files": [
+        "js/lib"
+    ]
+}
