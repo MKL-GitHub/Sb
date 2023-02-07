@@ -2,14 +2,13 @@ namespace Sb {
     export class Fps extends Text {
         private _fps: number = 0;
         private _lastTime: number = performance.now() + 1000;
-        private _lastTime2: number = performance.now() + 500;
         private _fpsToShow: number = 0;
     
-        public constructor(style?: Object) {
+        public constructor(style?: GraficObject) {
             super("", style);
         }
     
-        private GetFPS(): string {
+        private SetFPS(){
             const currentTime = performance.now();
     
             this._fps++;
@@ -19,12 +18,12 @@ namespace Sb {
                 this._fps = 0;
                 this._lastTime = currentTime + 1000;
             }
-            // this.Render(this._fpsToShow);
-            return `${Math.round(this._fpsToShow)} fps`;
+            
+            this.Value = `${Math.round(this._fpsToShow)} fps`;
         }
 
         public Render(ctx: any): void {
-            this.Value = this.GetFPS();
+            this.SetFPS();
             super.Render(ctx);
         }
     }
