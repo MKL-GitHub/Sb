@@ -13,10 +13,13 @@
     "files": [
         "ts/sb/GraficObject.ts",
         "ts/sb/Shape.ts",
+        "ts/sb/Line.ts",
         "ts/sb/Rect.ts",
         "ts/sb/Circle.ts",
         "ts/sb/Text.ts",
         "ts/sb/Fps.ts",
+        "ts/sb/Triangle.ts",
+        "ts/sb/ShapeControls.ts",
         "ts/sb/Canvas.ts",
     ]
     // "include": [

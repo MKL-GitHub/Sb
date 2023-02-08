@@ -6,7 +6,7 @@ namespace Sb {
         private _textBaseline: string = "top";
         private _textAlign: string = "left";
     
-        public constructor(private _value: string, style?: GraficObject) {
+        public constructor(private _value: string, style?: any) {
             super();
             if (style) this.Style = style;
         }
@@ -26,7 +26,7 @@ namespace Sb {
         public get TextAlign(): string { return this._textAlign; }
         public set TextAlign(value: string) { this._textAlign = value; }
         
-        protected set Style(style: GraficObject) {
+        protected set Style(style: any) {
             super.Style = style;
             if (style["fontSize"]) this.FontSize = style["fontSize"];
             if (style["fontFamily"]) this.FontFamily = style["fontFamily"];

@@ -22,6 +22,7 @@ const rect = new Sb.Rect({
     // horizontalAlignment: "right",
     // verticalAlignment: "bottom",
     borderRadius: 50,
+    borderWidth: 2,
 });
 
 const innerRect = new Sb.Rect({
@@ -49,6 +50,7 @@ const circle = new Sb.Circle({
     // top: 50,
     radius: 90,
     fill: "rgba(50, 50, 50, 0.7)",
+    borderWidth: 5,
     horizontalAlignment: "center",
     verticalAlignment: "center",
 })
@@ -68,6 +70,28 @@ const circle3 = new Sb.Circle({
     verticalAlignment: "center",
 })
 
+const triangle = new Sb.Triangle({
+    left: 150,
+    top: 250,
+    width: 80,
+    height: 80,
+    peak: "bottom",
+});
+
+const rectT = new Sb.Rect({
+    left: 50,
+    top: 250,
+    width: 80,
+    height: 80,
+    fill: "rgba(50, 100, 80, 1)",
+});
+
+const circle_ = new Sb.Circle({
+    left: 20,
+    top: 20,
+    radius: 50,
+})
+
 circle2.AppendChild(circle3);
 
 rect.AppendChild(innerRect);
@@ -79,6 +103,9 @@ circle.AppendChild(circle2);
 
 canvas.AppendChild(rect);
 // canvas.AppendChild(text);
+canvas.AppendChild(rectT);
+canvas.AppendChild(triangle);
+canvas.AppendChild(circle_);
 
-
-canvas.RenderFBF();
+// canvas.RenderFBF();
+canvas.Render();

@@ -1,15 +1,36 @@
 
 namespace Sb {
     export abstract class Shape extends GraficObject {
+        private _controls: ShapeControls;
+        private _isSelected: boolean = false;
+
         private _width: number = 0;
         private _height: number = 0;
         private _left: number = 0;
         private _top: number = 0;
         private _fill: string = "rgb(0, 0, 0)";
         private _horizontalAlignment: string = "left";
-        private _verticalAlignment: string = "top";                
-    
-        // public constructor(style?: Object) {}
+        private _verticalAlignment: string = "top";
+
+        public get IsSelected(): boolean { return this._isSelected; }
+        public set IsSelected(value: boolean) {
+            if (this._isSelected == value) return;
+
+            this._isSelected = value;
+
+            if (value) {
+                if (!this._controls) this._controls = new ShapeControls(this);
+                this.AppendChild(this._controls);
+            }
+            else {
+                if (this.Children[this.Children.length - 1] instanceof ShapeControls) {
+                    this.Children.pop();
+                }
+                else {
+                    console.log("Mistake");
+                }
+            }
+        }
 
         public get Width(): number { return this._width; }
         public set Width(value: number) { this._width = value; }
@@ -32,7 +53,7 @@ namespace Sb {
         public get VerticalAlignment(): string { return this._verticalAlignment; }
         public set VerticalAlignment(value: string) { this._verticalAlignment = value; }
     
-        protected set Style(style: GraficObject) {
+        protected set Style(style: any) {
             super.Style = style;
             if (style["left"]) this.Left = style["left"];
             if (style["top"]) this.Top = style["top"];  

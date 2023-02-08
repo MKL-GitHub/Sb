@@ -5,8 +5,6 @@ namespace Sb {
         private _children: Array<Shape> = [];
         private _parent: GraficObject;
 
-        // public constructor() {}
-
         public get AbsLeft(): number { return this._absLeft; }
         protected set AbsLeft(value: number) { this._absLeft = value; }
 

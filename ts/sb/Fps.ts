@@ -4,7 +4,7 @@ namespace Sb {
         private _lastTime: number = performance.now() + 1000;
         private _fpsToShow: number = 0;
     
-        public constructor(style?: GraficObject) {
+        public constructor(style?: any) {
             super("", style);
         }
     
